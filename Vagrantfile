@@ -32,12 +32,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
-
   config.vm.provision 'shell', :inline => 'yum install -y puppet'
+
+  config.librarian_puppet.puppetfile_dir = "manifests"
+  config.librarian_puppet.placeholder_filename = ".gitkeep"
 
   config.vm.provision :puppet do |puppet|
     puppet.manifest_file = "init.pp"
-    puppet.module_path = "manifests/modules"
+    puppet.module_path = "modules"
   end
 
 end

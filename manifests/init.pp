@@ -7,7 +7,11 @@
 
  file { '/etc/motd':
    content => "Welcome to your Vagrant-built virtual machine!
-               Managed by Puppet.\n"
+   Customize it to run your app with Puppet. NO CHEATING !\n"
  }
 
-#Lets start with me with some git?
+ file { "/etc/sudoers":
+         owner => "root",
+         group => "root",
+         mode  => 440,
+     }

@@ -1,5 +1,8 @@
-**/*.DS_Store
+.DS_Store
 .idea
 *.iml
-**/*json_spec
 tmp
+.vagrant
+modules/*
+.bundle
+.tmp
