@@ -1,9 +1,14 @@
-download and install vagrant
-vagrant plugin install vagrant-librarian-puppet
-ssh-add ~/.ssh/id_rsa
+#  Vagrant Puppet Workshop
+## Steps to setup
+### 1) download and install vagrant
+### 2) start vagrant
+````
+$vagrant up
+````
 
-vagrant up
-vagrant ssh
-cd /vagrant/vagrant-puppet-workshop
-bundle install
-ruby runApp.rb
+### 3) local machine
+````
+$gem install bundler
+$bundle install
+$ruby runApp.rb
+````

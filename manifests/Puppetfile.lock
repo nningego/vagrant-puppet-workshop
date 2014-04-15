@@ -1,8 +1,8 @@
 FORGE
   remote: http://forge.puppetlabs.com
   specs:
-    puppetlabs/ruby (0.1.0)
+    alup/rbenv (1.2.0)
 
 DEPENDENCIES
-  puppetlabs/ruby (>= 0)
+  alup/rbenv (>= 0)
 

@@ -10,8 +10,8 @@
    Customize it to run your app with Puppet. NO CHEATING !\n"
  }
 
- file { "/etc/sudoers":
-         owner => "root",
-         group => "root",
-         mode  => 440,
-     }
+ file { '.bashrc':
+   path => '/home/vagrant/.bashrc',
+   ensure => present,
+   source => '/vagrant/manifests/files/.bashrc'
+ }
