@@ -1,8 +1,0 @@
-FORGE
-  remote: http://forge.puppetlabs.com
-  specs:
-    alup/rbenv (1.2.0)
-
-DEPENDENCIES
-  alup/rbenv (>= 0)
-

@@ -4,11 +4,11 @@
 ### 2) start vagrant
 ````
 $vagrant up
-````
-
-### 3) local machine
-````
-$gem install bundler
+$vagrant ssh
+$cd /sampleApp
 $bundle install
 $ruby runApp.rb
 ````
+
+### 3) local machine
+open browser to http://localhost:4567
