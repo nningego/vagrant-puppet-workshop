@@ -28,13 +28,14 @@ rbenv::compile { "2.1.1":
   home => "/home/vagrant",
 }
 
-#exec { "install mysql library":
-#  command => "/usr/bin/apt-get install libmysqlclient-dev"
-#}
-
 class { '::mysql::server':
   root_password    => 'thought',
   override_options => { 'mysqld' => { 'max_connections' => '1024' } }
+}
+
+mysql_database { 'miniondb':
+  ensure  => 'present',
+  charset => 'utf8',
 }
 
 
