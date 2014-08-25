@@ -12,3 +12,9 @@ file { '.bashrc':
   ensure => present,
   source => '/vagrant/manifests/files/.bashrc'
 }
+
+rbenv::install { "vagrant":
+  group => 'vagrant',
+  home  => '/home/vagrant',
+}
+
