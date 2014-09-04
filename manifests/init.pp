@@ -30,7 +30,7 @@ rbenv::compile { "2.1.1":
 
 class { '::mysql::server':
   root_password    => 'thought',
-  override_options => { 'mysqld' => { 'max_connections' => '1024' } }
+  override_options => { 'mysqld' => { 'max_connections' => '1024', 'bind_address' => '0.0.0.0' } }
 }
 
 mysql_database { 'miniondb':
@@ -38,6 +38,13 @@ mysql_database { 'miniondb':
   charset => 'utf8',
 }
 
+mysql_grant { 'root@localhost/*.*':
+ensure     => 'present',
+options    => ['GRANT'],
+privileges => ['ALL'],
+table      => '*.*',
+user       => 'root@localhost',
+}
 
 
 
