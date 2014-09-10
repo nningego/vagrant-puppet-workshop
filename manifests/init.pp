@@ -33,18 +33,11 @@ class { '::mysql::server':
   override_options => { 'mysqld' => { 'max_connections' => '1024', 'bind_address' => '0.0.0.0' } }
 }
 
-mysql_database { 'miniondb':
-  ensure  => 'present',
-  charset => 'utf8',
+mysql::db { 'miniondb':
+  user     => 'root',
+  password => 'thought',
+  host     => '10.0.2.2',
+  grant    => ['ALL'],
 }
-
-mysql_grant { 'root@localhost/*.*':
-ensure     => 'present',
-options    => ['GRANT'],
-privileges => ['ALL'],
-table      => '*.*',
-user       => 'root@localhost',
-}
-
 
 
