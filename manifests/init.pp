@@ -28,11 +28,13 @@ rbenv::compile { "2.1.1":
   home => "/home/vagrant",
 }
 
+#binding address needs to be overriden to access mysql from outside
 class { '::mysql::server':
   root_password    => 'thought',
   override_options => { 'mysqld' => { 'max_connections' => '1024', 'bind_address' => '0.0.0.0' } }
 }
 
+#add permissions for incoming connection 10.2.2.2
 mysql::db { 'miniondb':
   user     => 'root',
   password => 'thought',
